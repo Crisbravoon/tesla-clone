@@ -1,13 +1,38 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Header from "../components/Header.astro";
+import ModelY from "../components/ModelY.astro";
+import Model3 from "../components/Model3.astro";
+import ModelS from "../components/ModelS.astro";
+import ModelX from "../components/ModelX.astro";
+import Charger from "../components/Charger.astro";
+import Powerwall from "../components/Powerwall.astro";
 import HeroSection from "../components/HeroSection.astro";
 ---
 
-<Layout title="Tesla - El auto de tus sueños">
-	<main>
-
-	<Header/>
+<Layout title=" Tesla - El auto de tus sueños">
+	<Header />
+	<main class="snap-y snap-mandatory relative w-full h-screen overflow-auto scroll">
+		<div class="snap-center">
 			<HeroSection />
+		</div>
+		<div class="snap-center">
+			<ModelY />
+		</div>
+		<div class="snap-center">
+			<Model3 />
+		</div>
+		<div class="snap-center">
+			<ModelS />
+		</div>
+		<div class="snap-center">
+			<ModelX />
+		</div>
+		<div class="snap-center">
+			<Powerwall />
+		</div>
+		<div class="snap-center">
+			<Charger />
+		</div>
 	</main>
 </Layout>

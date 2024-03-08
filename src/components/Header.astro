@@ -3,14 +3,15 @@ import Logo from "../components/Logo.astro";
 ---
 
 <header
-    class="py-3 px-10 flex items-center fixed top-0 w-full justify-between z-40 text-white"
+    id="landingHeader"
+    class="py-3 px-10 flex items-center fixed top-0 w-full justify-between z-40 text-current"
 >
     <div class="flex flex-grow basis-0">
         <Logo />
     </div>
     <nav>
         <ul
-            class="flex text-sm [&>li>a]:text-grey-900 [&>li>a]:font-medium [&>li>a]:inline-block [&>li>a]:px-4 [&>li>a]:py-2"
+            class="flex text-sm [&>li>a]:transition-colors [&>li>a]:duration-500 [&>li>a]:text-current [&>li>a]:font-medium [&>li>a]:inline-block [&>li>a]:px-4 [&>li>a]:py-2"
         >
             <li><a href="#"></a>Model S</li>
             <li><a href="#"></a>Model 3</li>
@@ -22,7 +23,7 @@ import Logo from "../components/Logo.astro";
     </nav>
     <nav class="flex flex-grow justify-end basis-0">
         <ul
-            class="flex text-sm [&>li>a]:text-grey-900 [&>li>a]:font-medium [&>li>a]:inline-block [&>li>a]:px-4 [&>li>a]:py-2"
+            class="flex text-sm [&>li>a]:transition-colors [&>li>a]:duration-500 [&>li>a]:text-current [&>li>a]:font-medium [&>li>a]:inline-block [&>li>a]:px-4 [&>li>a]:py-2"
         >
             <li><a href="#"></a>Soporte</li>
             <li><a href="#"></a>Tienda</li>
@@ -31,3 +32,25 @@ import Logo from "../components/Logo.astro";
         </ul>
     </nav>
 </header>
+
+<script>
+    const header = document.querySelector("#landingHeader") as HTMLElement;
+    const observerOptions = {
+        root: null,
+        rootMargin: "0px", //en cuanto se ve el elemento
+        threshold: 0.9, // Visibilidad para el elemento
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            const { isIntersecting } = entry;
+            if (isIntersecting) {
+                const color = entry.target.getAttribute("data-header-color");
+                header.style.color = color;
+            }
+        });
+    }, observerOptions);
+
+    const sectionElements = document.querySelectorAll(".landing-section");
+    sectionElements.forEach((section) => observer.observe(section));
+</script>
