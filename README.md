@@ -2,8 +2,11 @@
 ## 🚀 Proyecto Landing Tesla 
 Proyecto de practica para mejorar la progración en donde se realizo el clon de la pagina de Tesla.
 
-![just-the-basics](https://github.com/Crisbravoon/tesla-clone/tree/main/public/Tesla-page.png)
+<a >
+  <img src="./public/Tesla-page.png" alt="Logo" width="800" />
+</a>
 
+![just-the-basics](/public/Tesla-page.png)
 
 ## 🧞 Comandos
 Los siguiente comandos son para realizar el levantamiento del proyecto mediante una terminal:
