@@ -6,8 +6,6 @@ Proyecto de practica para mejorar la progración en donde se realizo el clon de 
   <img src="./public/Tesla-page.png" alt="Logo" width="800" />
 </a>
 
-![just-the-basics](/public/Tesla-page.png)
-
 ## 🧞 Comandos
 Los siguiente comandos son para realizar el levantamiento del proyecto mediante una terminal:
 
